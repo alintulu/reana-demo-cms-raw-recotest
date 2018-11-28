@@ -1,0 +1,15 @@
+version: 0.3.0
+inputs:
+  files:
+  parameters:
+workflow:
+  type: serial
+  specification:
+    steps:
+      - environment: "clelange/cmssw:5_3_32" 
+        commands:
+        - mkdir -p results
+        - cmsRun code/2010-RAW-test/Electron/raw_Electron.py 
+outputs:
+  files:
+    - results/histo_Electron.root
